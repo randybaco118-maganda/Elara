@@ -1,0 +1,19 @@
+ROOT IMP ASSET LICENSE
+
+You may:
+
+- Use these assets in personal and commercial games and interactive media.
+- Modify the assets to fit your project.
+- Use the assets in an unlimited number of your own completed projects.
+
+You may not:
+
+- Resell, redistribute, sublicense, share, or give away the source assets.
+- Upload the assets to another marketplace, repository, or asset library.
+- Use the assets, modified or unmodified, to create a competing asset pack.
+- Claim the original artwork as your own.
+- Use the assets for training generative AI systems or datasets.
+
+Credit is appreciated but not required.
+
+Copyright 2026 Colin Yang. All rights reserved.

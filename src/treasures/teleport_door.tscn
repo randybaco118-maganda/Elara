@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bq1mfm18q8m42"]
+
+[ext_resource type="Script" uid="uid://bmgxmv1r0ooyx" path="res://src/treasures/teleport_door.gd" id="1_tpjfb"]
+[ext_resource type="Texture2D" uid="uid://cqxbtmgmrm5bh" path="res://assets/Sprite/teleportation.png" id="1_y8r6y"]
+[ext_resource type="FontFile" uid="uid://cexuddyrv2l30" path="res://assets/Fonts/Magical Bright.ttf" id="3_5ru21"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpjfb"]
+atlas = ExtResource("1_y8r6y")
+region = Rect2(0, 0, 362, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ru21"]
+atlas = ExtResource("1_y8r6y")
+region = Rect2(362, 0, 362, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvno2"]
+atlas = ExtResource("1_y8r6y")
+region = Rect2(724, 0, 362, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md7ah"]
+atlas = ExtResource("1_y8r6y")
+region = Rect2(1086, 0, 362, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lilov"]
+atlas = ExtResource("1_y8r6y")
+region = Rect2(1448, 0, 362, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x3lo"]
+atlas = ExtResource("1_y8r6y")
+region = Rect2(1810, 0, 362, 308)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ly8ft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpjfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ru21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvno2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md7ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lilov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x3lo")
+}],
+"loop": 0,
+"name": &"teleport",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly8ft"]
+size = Vector2(252.5, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_favpa"]
+size = Vector2(437, 326)
+
+[node name="TeleportDoor" type="Area2D" unique_id=328107968]
+collision_layer = 10
+collision_mask = 10
+script = ExtResource("1_tpjfb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=958555402]
+sprite_frames = SubResource("SpriteFrames_ly8ft")
+animation = &"teleport"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=145040645]
+position = Vector2(0.75, -6)
+shape = SubResource("RectangleShape2D_ly8ft")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=439476789]
+position = Vector2(0.75, -6)
+collision_layer = 0
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=569645301]
+position = Vector2(-11.25, -12)
+shape = SubResource("RectangleShape2D_favpa")
+
+[node name="TeleportGuide" type="Label" parent="." unique_id=289865880]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_5ru21")
+theme_override_font_sizes/font_size = 26
+text = "press G to teleport"
+vertical_alignment = 1
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://bp0tb80v3enr5"]
+
+[ext_resource type="Texture2D" uid="uid://dia4vygy84jmy" path="res://assets/Effects/32x32 Shades Effect/320.png" id="1_sppfm"]
+[ext_resource type="Script" uid="uid://xpe07gka7d4d" path="res://abilities/player/wind_projectile.gd" id="1_thsqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf2k0"]
+atlas = ExtResource("1_sppfm")
+region = Rect2(1536, 322, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w14xk"]
+atlas = ExtResource("1_sppfm")
+region = Rect2(1568, 322, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osjiw"]
+atlas = ExtResource("1_sppfm")
+region = Rect2(1600, 322, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftho0"]
+atlas = ExtResource("1_sppfm")
+region = Rect2(1632, 322, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfxhg"]
+atlas = ExtResource("1_sppfm")
+region = Rect2(1664, 322, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghou7"]
+atlas = ExtResource("1_sppfm")
+region = Rect2(1696, 322, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t44wb"]
+atlas = ExtResource("1_sppfm")
+region = Rect2(1728, 322, 32, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7df2a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf2k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w14xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osjiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftho0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfxhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghou7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t44wb")
+}],
+"loop": true,
+"name": &"windatk",
+"speed": 80.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhed7"]
+size = Vector2(75, 29)
+
+[node name="WindProjectile" type="Area2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_thsqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.9999962, 1.4305115e-06)
+scale = Vector2(2.3125, 1.8804348)
+sprite_frames = SubResource("SpriteFrames_7df2a")
+animation = &"windatk"
+autoplay = "windatk"
+frame_progress = 0.08989338
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_hhed7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

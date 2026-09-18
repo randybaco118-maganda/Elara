@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://crcy0hhud71oi"]
+
+[ext_resource type="SpriteFrames" uid="uid://c4tgbgm5y0tis" path="res://abilities/player/new_sprite_frames.tres" id="1_5rhy8"]
+[ext_resource type="Script" uid="uid://xpe07gka7d4d" path="res://abilities/player/wind_projectile.gd" id="1_thsqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thsqv"]
+size = Vector2(70, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly8ft"]
+size = Vector2(70, 27)
+
+[node name="wind_projectile" type="Area2D" unique_id=1127756899 groups=["projectile"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_thsqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108330940]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_thsqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1820157253]
+position = Vector2(1, 1.000001)
+scale = Vector2(2.21875, 1.75)
+sprite_frames = ExtResource("1_5rhy8")
+animation = &"wind_atk"
+autoplay = "wind_atk"
+frame_progress = 0.02932582
+
+[node name="Area2D" type="Area2D" parent="." unique_id=777255045]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1573904621]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ly8ft")

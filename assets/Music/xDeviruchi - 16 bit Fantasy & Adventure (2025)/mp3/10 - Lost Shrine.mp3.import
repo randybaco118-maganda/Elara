@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gtt1j1g8a2wb"
+path="res://.godot/imported/10 - Lost Shrine.mp3-c43a6e549ab569d6463dd3dd72745c65.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/xDeviruchi - 16 bit Fantasy & Adventure (2025)/mp3/10 - Lost Shrine.mp3"
+dest_files=["res://.godot/imported/10 - Lost Shrine.mp3-c43a6e549ab569d6463dd3dd72745c65.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

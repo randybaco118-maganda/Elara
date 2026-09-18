@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://gv7x40hg1xlb"]
+
+[ext_resource type="AudioStream" uid="uid://dqahpl2qtejtx" path="res://assets/Effects/xDeviruchi - 16 bit Fantasy & Adventure (2025)/mp3/04 - Silent Forest.mp3" id="1_t4gw0"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1332068705]
+stream = ExtResource("1_t4gw0")
+autoplay = true

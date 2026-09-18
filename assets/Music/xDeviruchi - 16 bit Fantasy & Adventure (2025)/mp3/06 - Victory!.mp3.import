@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djk1x8tldwitf"
+path="res://.godot/imported/06 - Victory!.mp3-73c86c3ec5fbc551a0fe93e8e75d2ab9.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/xDeviruchi - 16 bit Fantasy & Adventure (2025)/mp3/06 - Victory!.mp3"
+dest_files=["res://.godot/imported/06 - Victory!.mp3-73c86c3ec5fbc551a0fe93e8e75d2ab9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

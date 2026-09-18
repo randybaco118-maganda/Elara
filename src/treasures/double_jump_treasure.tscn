@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://n8ehof826max"]
+
+[ext_resource type="Script" uid="uid://ck20nvdd45s6o" path="res://src/treasures/double_jump_treasure.gd" id="1_o3fj6"]
+[ext_resource type="Texture2D" uid="uid://cyyruebsn17f0" path="res://assets/Sprite/Animated Chests/Chests.png" id="2_m0o1x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkfxb"]
+atlas = ExtResource("2_m0o1x")
+region = Rect2(0, 0, 46, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73ogd"]
+atlas = ExtResource("2_m0o1x")
+region = Rect2(0, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyjuu"]
+atlas = ExtResource("2_m0o1x")
+region = Rect2(48, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vj0a"]
+atlas = ExtResource("2_m0o1x")
+region = Rect2(96, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibjvd"]
+atlas = ExtResource("2_m0o1x")
+region = Rect2(144, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omllp"]
+atlas = ExtResource("2_m0o1x")
+region = Rect2(192, 32, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ly8ft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkfxb")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73ogd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyjuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vj0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibjvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omllp")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_favpa"]
+size = Vector2(152, 107)
+
+[node name="DoubleJumpTreasure" type="Area2D" unique_id=116212410]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_o3fj6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1989903700]
+position = Vector2(1.0000005, -2)
+scale = Vector2(4.677083, 4.65625)
+sprite_frames = SubResource("SpriteFrames_ly8ft")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.2430753
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=89439630]
+position = Vector2(-32, 22.5)
+shape = SubResource("RectangleShape2D_favpa")
+
+[node name="OpenGuide" type="Label" parent="." unique_id=1812885534]
+visible = false
+offset_left = -32.0
+offset_top = 19.5
+offset_right = 8.0
+offset_bottom = 42.5
+theme_override_font_sizes/font_size = 25
+text = "PRESS \"F\" TO OPEN"
+horizontal_alignment = 1
